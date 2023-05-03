@@ -1,0 +1,67 @@
+[Eth]
+NetworkId = 51178
+SyncMode = "full"
+TrieCleanCacheRejournal= 300000000000
+TrieTimeout = 20000000000
+RPCTxFeeCap = 6.0
+
+
+[Eth.Miner]
+GasFloor = 63000000
+GasCeil =  63000000
+GasPrice = 2000000000
+Recommit = 3000000000
+Noverify = false
+
+[Eth.Ethash]
+CacheDir = "ethash"
+CachesInMem = 2
+CachesOnDisk = 3
+CachesLockMmap = false
+DatasetDir = "./data/.ethash"
+DatasetsInMem = 1
+DatasetsOnDisk = 2
+DatasetsLockMmap = false
+PowMode = 0
+
+[Eth.TxPool]
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 600000000000
+PriceLimit = 2000000000
+PriceBump = 10
+AccountSlots = 64
+GlobalSlots = 10240
+AccountQueue = 32
+GlobalQueue = 1024
+Lifetime = 1800000000000
+
+[Node]
+DataDir = "./data"
+InsecureUnlockAllowed = true
+NoUSB = true
+IPCPath = "geth.ipc"
+HTTPHost = "0.0.0.0"
+HTTPPort = 8545
+HTTPCors = ["*"]
+HTTPVirtualHosts = ["*"]
+HTTPModules = ['eth', 'net', 'web3']
+
+WSHost = "0.0.0.0"
+WSPort = 8546
+WSModules = ['eth', 'net', 'web3']
+
+GraphQLVirtualHosts = ["localhost"]
+
+
+[Node.P2P]
+MaxPeers = 50
+NoDiscovery = true
+StaticNodes = ["enode://95b3da093c3f7c9717573090fb1b39cd4c1ad43409d69d278dee711aca3153b47d53b3d5de3054565c21c8ec89ef7bcab8d0e41bfcc3d3e502eb2b2938ef5c38@159.135.196.65:33687","enode://7a13af8fbaa73fbc14ac5049911cb403420cbe4b23413e6999083dfde132fb126cbc2bb4415fe2b9486263c109bd92c21b5a9d265ab6a4f8802c9d59878e1bc2@159.135.196.66:33687","enode://77d200317880ee94e72da403e6fe17c359b81a3a60295567ac688bc7096205d6989c484febd4801ebfb0881296d1690a30b792d6d598e4bbf3832f2f88b697df@159.135.196.67:33687","enode://76a59906e683f7de3fe657964ae1a5105a24e5405cf09b9a5ee65f8131bf60aa917a09ba69774e1c33ff7986a25b15781360273be8e1bd54fc8e7a39117d66d1@44.203.58.25:33687","enode://1900ede2cab0dde96920ef6bfc26af6866a55cb125fb41ce88147589164fbc2d72529af774bf2d8647de16a7e0307e22a23df82681d28e0538ae6659071a2a1c@18.208.153.56:33687","enode://a0dbe9dc905970d69a38818cca6b0f6c6c05a241f5b5f9cffa060fd0bf1dba049fd06a1d546389261df3444557f1ae3716b2842f68d0d18288478ad1cb9e6fef@44.201.178.123:33687"]
+ListenAddr = ":33687"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
